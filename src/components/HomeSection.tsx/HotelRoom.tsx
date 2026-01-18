@@ -54,7 +54,7 @@ export function HotelRoom() {
               }}
               breakpoints={{
                 120: {
-                  slidesPerView: 2,
+                  slidesPerView: 1,
                   spaceBetween: 10,
                 },
                 640: {

@@ -46,6 +46,7 @@ export default function Testimonials() {
         centeredSlides={true}
         spaceBetween={30}
         className="mx-auto overflow-visible w-full"
+        initialSlide={1}
       >
         {testimonials.map((item, idx) => (
           <SwiperSlide key={idx} className="md:w-150! w-full!">

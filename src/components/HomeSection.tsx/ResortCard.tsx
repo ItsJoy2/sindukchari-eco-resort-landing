@@ -59,11 +59,11 @@ export default function ResortCard() {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 30,
             },
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 20,
             },
           }}
@@ -71,7 +71,7 @@ export default function ResortCard() {
           initialSlide={1}
           pagination={{ clickable: true }}
           modules={[Pagination]}
-          className="mySwiper"
+          className="mySwiper w-full"
         >
           {cardData.map((item) => (
             <SwiperSlide key={item.id}>
@@ -95,7 +95,7 @@ export default function ResortCard() {
                 <div className="flex justify-center">
                   <Button
                     variant="ghost"
-                    className="flex items-center gap-2 opacity-0 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
+                    className="flex items-center gap-2 opacity-80 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
                   >
                     Read More
                     <GoArrowRight className="text-lg transition-transform duration-300 group-hover:translate-x-1" />

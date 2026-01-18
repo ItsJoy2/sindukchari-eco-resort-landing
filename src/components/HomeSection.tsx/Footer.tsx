@@ -114,8 +114,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-700 pt-4">
-          <p className="text-sm text-slate-400">
+        <div className="border-t border-slate-700 pt-4 text-center">
+          <p className="text-sm text-slate-400 ">
             Sindukchari Eco Resort © 2026. All rights reserved.
           </p>
         </div>

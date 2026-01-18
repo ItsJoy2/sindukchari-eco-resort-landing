@@ -37,10 +37,13 @@ export default function Navbar() {
     }
   };
 
+  const textColor = scrolled ? "text-gray-900" : "text-white";
+  const hoverText = scrolled ? "hover:text-gray-700" : "hover:text-gray-300";
+
   return (
     <div
       className={`fixed top-0 left-0 w-full z-30 transition-all duration-300 ${
-        scrolled ? "pt-3 backdrop-blur bg-gray-600" : "bg-transparent py-5"
+        scrolled ? "pt-3 backdrop-blur bg-gray-50" : "bg-transparent py-5"
       }`}
     >
       <MainContainer>
@@ -48,25 +51,22 @@ export default function Navbar() {
           <div className="flex items-center">
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <button className="sm:hidden text-white">
-                  <IoMdMenu className="text-xl" />
+                <button className={`flex items-center gap-2 ${textColor}`}>
+                  <IoMdMenu className={`text-xl cursor-pointer ${hoverText}`} />
+                  Menu
                 </button>
               </SheetTrigger>
 
-              <button className="hidden sm:block text-green-50 font-medium text-xl">
-                Sindukchari
-              </button>
-
               <SheetContent
                 side="left"
-                className="w-72 bg-gray-900 text-white p-3"
+                className="w-72 bg-gray-50 text-gray-90 p-3"
               >
                 <nav className="mt-8 space-y-4">
                   {menuItems.map((item) => (
                     <button
                       key={item.id}
                       onClick={() => handleNav(item.id)}
-                      className="block w-full text-left text-lg font-medium hover:text-green-400 cursor-pointer"
+                      className="block w-full text-left text-lg font-medium hover:text-blue-600 cursor-pointer"
                     >
                       {item.label}
                     </button>
@@ -76,20 +76,22 @@ export default function Navbar() {
             </Sheet>
           </div>
 
-          <h6 className="text-sm sm:text-base text-center text-white font-medium">
+          <h6
+            className={`text-sm sm:text-base text-center font-medium ${textColor}`}
+          >
             Shindukchari Eco Resort
           </h6>
 
           <div className="flex items-center gap-2 sm:gap-3 justify-end">
             <a href="https://wa.me/8801712345678">
-              <Button className="bg-[#1DAA61] px-3 sm:px-4 hover:bg-[#127140]">
+              <Button className="bg-[#1DAA61] px-3 sm:px-4 hover:bg-[#127140] cursor-pointer">
                 <FaWhatsapp />
                 <span className="hidden sm:inline">Call Now</span>
               </Button>
             </a>
 
             <Link href="/contact">
-              <Button className="bg-[#2563EB] hover:bg-[#193e8e] px-3 sm:px-4">
+              <Button className="bg-[#2563EB] hover:bg-[#193e8e] px-3 sm:px-4 cursor-pointer">
                 <span className="hidden sm:inline">Contact Us</span>
                 <GoArrowRight />
               </Button>
@@ -98,7 +100,11 @@ export default function Navbar() {
         </div>
       </MainContainer>
 
-      <div className="border-b border-white/50 mt-3" />
+      <div
+        className={`border-b mt-3 ${
+          scrolled ? "border-gray-300" : "border-white/50"
+        }`}
+      />
     </div>
   );
 }
