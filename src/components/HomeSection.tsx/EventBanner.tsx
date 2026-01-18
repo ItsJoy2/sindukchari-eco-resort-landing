@@ -22,9 +22,11 @@ export default function EventBanner() {
               most stunning luxury resort in Italy. Discover offers crafted to
               enhance."
             />
-            <button className="flex items-center gap-1 text-[#0C0C0D]">
-              Explore Now <GoArrowRight />
-            </button>
+            <a href="https://sindukchari.travilla.app/login" target="_blank">
+              <button className="flex items-center gap-1 text-[#ffffff] bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-800/80 cursor-pointer">
+                Explore Now <GoArrowRight />
+              </button>
+            </a>
           </div>
         </div>
       </MainContainer>

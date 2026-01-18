@@ -1,5 +1,5 @@
 import Footer from "@/components/HomeSection.tsx/Footer";
-import HeroSection from "@/components/HomeSection.tsx/HeroSection";
+import Navbar from "@/components/HomeSection.tsx/Navbar";
 import { AuthProvider } from "@/provider/MainProvider";
 
 export default function HomeLayout({
@@ -9,7 +9,7 @@ export default function HomeLayout({
 }>) {
   return (
     <AuthProvider>
-      <HeroSection />
+      <Navbar />
       {children}
       <Footer />
     </AuthProvider>

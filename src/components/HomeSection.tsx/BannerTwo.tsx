@@ -14,9 +14,12 @@ export default function BannerTwo() {
               className="text-[18px]"
               text="A smart investment that rewards you with lifetime vacations and steady income."
             />
-            <button className="flex items-center gap-2 bg-white text-black px-4 rounded-full mt-3">
-              Explore Now <GoArrowRight />
-            </button>
+            <a href="https://sindukchari.travilla.app/login" target="_blank">
+              {" "}
+              <button className="flex items-center gap-2 bg-white text-black px-4 rounded-full mt-3 py-2 hover:bg-white/80">
+                Explore Now <GoArrowRight />
+              </button>
+            </a>
           </div>
           <Image
             className="w-4/12 aspect-square rounded"

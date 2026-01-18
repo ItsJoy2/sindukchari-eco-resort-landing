@@ -1,0 +1,104 @@
+"use client";
+
+import { IoMdMenu } from "react-icons/io";
+import { FaWhatsapp } from "react-icons/fa";
+import { GoArrowRight } from "react-icons/go";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import MainContainer from "../shared/container/MainContainer";
+import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+
+const menuItems = [
+  { label: "Home", id: "home" },
+  { label: "Gallery", id: "gallery" },
+  { label: "About", id: "about" },
+];
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleNav = (id: string) => {
+    setOpen(false);
+    if (pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(`/#${id}`);
+    }
+  };
+
+  return (
+    <div
+      className={`fixed top-0 left-0 w-full z-30 transition-all duration-300 ${
+        scrolled ? "pt-3 backdrop-blur bg-gray-600" : "bg-transparent py-5"
+      }`}
+    >
+      <MainContainer>
+        <div className="grid grid-cols-3 items-center">
+          <div className="flex items-center">
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <button className="sm:hidden text-white">
+                  <IoMdMenu className="text-xl" />
+                </button>
+              </SheetTrigger>
+
+              <button className="hidden sm:block text-green-50 font-medium text-xl">
+                Sindukchari
+              </button>
+
+              <SheetContent
+                side="left"
+                className="w-72 bg-gray-900 text-white p-3"
+              >
+                <nav className="mt-8 space-y-4">
+                  {menuItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => handleNav(item.id)}
+                      className="block w-full text-left text-lg font-medium hover:text-green-400 cursor-pointer"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
+
+          <h6 className="text-sm sm:text-base text-center text-white font-medium">
+            Shindukchari Eco Resort
+          </h6>
+
+          <div className="flex items-center gap-2 sm:gap-3 justify-end">
+            <a href="https://wa.me/8801712345678">
+              <Button className="bg-[#1DAA61] px-3 sm:px-4 hover:bg-[#127140]">
+                <FaWhatsapp />
+                <span className="hidden sm:inline">Call Now</span>
+              </Button>
+            </a>
+
+            <Link href="/contact">
+              <Button className="bg-[#2563EB] hover:bg-[#193e8e] px-3 sm:px-4">
+                <span className="hidden sm:inline">Contact Us</span>
+                <GoArrowRight />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </MainContainer>
+
+      <div className="border-b border-white/50 mt-3" />
+    </div>
+  );
+}

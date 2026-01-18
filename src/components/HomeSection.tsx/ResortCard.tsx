@@ -39,7 +39,7 @@ const cardData = [
 
 export default function ResortCard() {
   return (
-    <section className="md:py-12 py-6">
+    <section id="about" className="md:py-12 py-6 scroll-mt-20">
       <MainContainer>
         <HeadingOne
           text="Special attractions of the"

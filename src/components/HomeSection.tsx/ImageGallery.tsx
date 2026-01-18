@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ImageGallery() {
   return (
-    <section className="md:pt-12">
+    <section id="gallery" className="md:pt-12">
       <div className="grid grid-cols-2 md:grid-cols-5">
         {[
           Images.gallery1,

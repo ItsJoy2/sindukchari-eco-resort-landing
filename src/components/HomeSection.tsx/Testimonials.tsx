@@ -1,10 +1,9 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
-import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
 import HeadingOne from "../shared/heading/HeadingOne";
 
 const manes =
@@ -43,26 +42,18 @@ export default function Testimonials() {
       <HeadingOne text="What Customer Say" className="text-center mb-12" />
 
       <Swiper
-        modules={[Pagination]}
-        spaceBetween={30}
-        loop
+        slidesPerView="auto"
         centeredSlides={true}
-        pagination={{ clickable: true }}
-        breakpoints={{
-          0: { slidesPerView: 1, centeredSlides: false },
-          768: { slidesPerView: 2, centeredSlides: true },
-          1024: { slidesPerView: 3, centeredSlides: true },
-        }}
-        className="max-w-7xl mx-auto"
+        spaceBetween={30}
+        className="mx-auto overflow-visible w-full"
       >
         {testimonials.map((item, idx) => (
-          <SwiperSlide key={idx}>
+          <SwiperSlide key={idx} className="md:w-150! w-full!">
             {({ isActive }) => (
               <div
                 className={`h-full w-full rounded-xl bg-white p-8 shadow-sm transition-all duration-500
                   ${isActive ? "opacity-100 scale-100" : "opacity-40 scale-90"}`}
               >
-                {/* Header */}
                 <div className="mb-4 flex items-center gap-4">
                   <Image
                     src={item.image}
@@ -83,10 +74,10 @@ export default function Testimonials() {
                     ))}
                   </div>
                 </div>
-
-                {/* Content */}
                 <h3 className="mb-3 text-2xl font-semibold">{item.title}</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">“{item.text}”</p>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  “{item.text}”
+                </p>
               </div>
             )}
           </SwiperSlide>
