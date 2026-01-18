@@ -21,7 +21,6 @@ const initialValues: contactUsFormType = {
   name: "",
   email: "",
   phone: "",
-  subject: "",
   message: "",
 };
 
@@ -61,6 +60,8 @@ export default function ContactUsPageComponent() {
     if (!payload.email) {
       delete payload.email;
     }
+    toast.success("Message Sent Succefully!");
+    formRef.current?.reset();
     return;
     mutate(payload);
   };
@@ -101,7 +102,7 @@ export default function ContactUsPageComponent() {
                 />
                 <TextareaField
                   name="message"
-                  label="Subject"
+                  label="Message"
                   placeholder="Enter message"
                   // inputClass="contactus_form"
                 />
@@ -114,17 +115,20 @@ export default function ContactUsPageComponent() {
             </GenericForm>
           </div>
           <div className="flex items-center h-full">
-           <div className="space-y-2">
-             <HeadingOne text="Get Free Support Analysis" />
-            <HeadingTwo className="font-normal text-gray-500" text="Call Us For First Support To This Number" />
+            <div className="space-y-2">
+              <HeadingOne text="Get Free Support Analysis" />
+              <HeadingTwo
+                className="font-normal text-gray-500"
+                text="Call Us For First Support To This Number"
+              />
 
-            <a
-              href="tel:+8801817643422"
-              className="mt-2 inline-block text-lg font-normal hover:underline"
-            >
-              +880 01817 643 422
-            </a>
-           </div>
+              <a
+                href="tel:+8801817643422"
+                className="mt-2 inline-block text-lg font-normal hover:underline"
+              >
+                +880 01817 643 422
+              </a>
+            </div>
           </div>
         </div>
       </MainContainer>

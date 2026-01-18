@@ -7,6 +7,5 @@ export const contactUsSchema = z.object({
     .string()
     .min(11, "Enter 11 digit phone number")
     .max(11, "Enter 11 digit phone number"),
-  subject: z.string().nonempty("Enter a valid phone number"),
   message: z.string().nonempty("Password must be at least 6 characters"),
 });
