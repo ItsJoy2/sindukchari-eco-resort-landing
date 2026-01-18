@@ -71,6 +71,18 @@ export default function Navbar() {
                       {item.label}
                     </button>
                   ))}
+                  <a
+                    href="https://sindukchari.travilla.app/login"
+                    target="_blank"
+                    className=""
+                  >
+                    <button
+                      onClick={() => handleNav("investment")}
+                      className="block w-full text-left text-lg font-medium hover:text-blue-600 cursor-pointer"
+                    >
+                      Investment
+                    </button>
+                  </a>
                 </nav>
               </SheetContent>
             </Sheet>

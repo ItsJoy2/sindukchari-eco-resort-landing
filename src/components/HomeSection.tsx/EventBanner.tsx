@@ -6,10 +6,10 @@ import HeadingOne from "../shared/heading/HeadingOne";
 export default function EventBanner() {
   return (
     <section
-      className="relative w-full md:h-170 h-auto bg-no-repeat bg-center text-white"
+      className="relative w-full md:h-170 py-20 h-auto bg-no-repeat bg-center text-white"
       style={{
         backgroundImage: `url("/hotelBackground.jpg")`,
-        backgroundSize: "100% auto",
+        backgroundSize: "100% 100%",
       }}
     >
       <MainContainer className="h-full">

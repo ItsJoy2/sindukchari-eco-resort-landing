@@ -71,10 +71,10 @@ export function HotelRoom() {
                 },
               }}
               modules={[Navigation]}
-              className="mySwiper"
+              className=""
             >
               {products.map((_, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className="bg-white rounded-b-md">
                   <Link href="/resort/123">
                     <div className="rounded-md">
                       <Image
@@ -124,7 +124,7 @@ export function HotelRoom() {
               className={`popular-swiper-prev-button size-9 p-2 rounded-full transition-all duration-300 ${
                 isBeginning
                   ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                  : "bg-white shadow-md hover:bg-blue-500 hover:text-white hover:scale-110"
+                  : "bg-white shadow-md hover:bg-blue-500 hover:text-white hover:scale-110 cursor-pointer"
               }`}
               disabled={isBeginning}
             >
@@ -134,7 +134,7 @@ export function HotelRoom() {
               className={`popular-swiper-next-button size-9 p-2 rounded-full transition-all duration-300 ${
                 isEnd
                   ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                  : "bg-white shadow-md hover:bg-blue-500 hover:text-white hover:scale-110"
+                  : "bg-white shadow-md hover:bg-blue-500 hover:text-white hover:scale-110 cursor-pointer"
               }`}
               disabled={isEnd}
             >
