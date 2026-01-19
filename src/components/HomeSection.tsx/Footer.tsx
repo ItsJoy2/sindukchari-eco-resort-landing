@@ -3,6 +3,7 @@
 import { Facebook, Instagram, X } from "lucide-react";
 import MainContainer from "../shared/container/MainContainer";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -22,17 +23,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="bg-blue-500 rounded-lg size-8 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
-              <h3 className="text-xl font-semibold">
-                Shindukchari Eco Resort
-              </h3>
+              <Image
+                onClick={() => handleNav("home")}
+                className="w-30 cursor-pointer"
+                src="/logo.png"
+                alt="img"
+                width={300}
+                height={300}
+              />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              With a new concept of space and freedom, we have redefined the idea
-              of luxury, taking it to the highest level, by creating the most
-              stunning luxury resort in Italy.
+              With a new concept of space and freedom, we have redefined the
+              idea of luxury, taking it to the highest level, by creating the
+              most stunning luxury resort in Italy.
             </p>
           </div>
 

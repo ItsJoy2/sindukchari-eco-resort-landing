@@ -17,16 +17,16 @@ export default function RecentNews() {
         <HeadingOne text="articles" className="text-center font-medium mb-8" />
         <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
           {[Images.news2, Images.news1, Images.news3].map((item, idx) => (
-            <div>
+            <div key={idx}>
               <Image
                 className={cn(
                   idx === 0
                     ? "h-90 w-full object-cover"
                     : idx === 1
-                    ? "h-100 w-full object-cover"
-                    : idx === 2
-                    ? "h-120 w-full object-cover"
-                    : ""
+                      ? "h-100 w-full object-cover"
+                      : idx === 2
+                        ? "h-120 w-full object-cover"
+                        : "",
                 )}
                 src={item}
                 alt="img"
@@ -38,7 +38,10 @@ export default function RecentNews() {
                 <h4 className="font-medium">Resort</h4>
                 <p className="text-gray-600">January 5, 2026</p>
               </div>
-              <HeadingTwo className="font-normal" text="Croporate program from Dhaka With Full Event 2026" />
+              <HeadingTwo
+                className="font-normal"
+                text="Croporate program from Dhaka With Full Event 2026"
+              />
             </div>
           ))}
         </div>

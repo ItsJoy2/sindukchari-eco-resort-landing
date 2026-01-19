@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import MainContainer from "../shared/container/MainContainer";
 export default function HeroSection() {
   return (

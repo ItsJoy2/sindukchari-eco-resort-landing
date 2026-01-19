@@ -1,14 +1,15 @@
 "use client";
 
-import { IoMdMenu } from "react-icons/io";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { IoMdMenu } from "react-icons/io";
 import MainContainer from "../shared/container/MainContainer";
-import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
 
 const menuItems = [
   { label: "Home", id: "home" },
@@ -43,7 +44,7 @@ export default function Navbar() {
   return (
     <div
       className={`fixed top-0 left-0 w-full z-30 transition-all duration-300 ${
-        scrolled ? "pt-3 backdrop-blur bg-gray-50" : "bg-transparent py-5"
+        scrolled ? "pt-3 backdrop-blur bg-blue-50" : "bg-transparent py-5"
       }`}
     >
       <MainContainer>
@@ -88,11 +89,17 @@ export default function Navbar() {
             </Sheet>
           </div>
 
-          <h6
-            className={`text-sm sm:text-base text-center font-medium ${textColor}`}
-          >
-            Shindukchari Eco Resort
-          </h6>
+          <div className="flex items-center justify-center">
+            <div className="w-30">
+              <Image
+                className="w-full"
+                src="/logo.png"
+                alt="img"
+                width={300}
+                height={300}
+              />
+            </div>
+          </div>
 
           <div className="flex items-center gap-2 sm:gap-3 justify-end">
             <a href="https://wa.me/8801712345678">
