@@ -38,13 +38,13 @@ export default function Navbar() {
     }
   };
 
-  const textColor = scrolled ? "text-gray-900" : "text-white";
-  const hoverText = scrolled ? "hover:text-gray-700" : "hover:text-gray-300";
+  const textColor = scrolled ? "text-gray-50" : "text-white";
+  const hoverText = scrolled ? "hover:text-gray-100" : "hover:text-gray-100";
 
   return (
     <div
       className={`fixed top-0 left-0 w-full z-30 transition-all duration-300 ${
-        scrolled ? "pt-3 backdrop-blur bg-blue-50" : "bg-transparent py-5"
+        scrolled ? "pt-3 backdrop-blur bg-[#030324] text-white" : "bg-transparent py-5"
       }`}
     >
       <MainContainer>
@@ -90,10 +90,10 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center justify-center">
-            <div className="w-30">
+            <div className="md:w-48 w-45">
               <Image
-                className="w-full"
-                src="/logo.png"
+                className="w-full md:h-15 h-10"
+                src="/logo2.png"
                 alt="img"
                 width={300}
                 height={300}
@@ -121,7 +121,7 @@ export default function Navbar() {
 
       <div
         className={`border-b mt-3 ${
-          scrolled ? "border-gray-300" : "border-white/50"
+          scrolled ? "border-[#030324]" : "border-white/50"
         }`}
       />
     </div>

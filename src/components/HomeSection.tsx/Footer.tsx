@@ -26,7 +26,7 @@ export default function Footer() {
               <Image
                 onClick={() => handleNav("home")}
                 className="w-30 cursor-pointer"
-                src="/logo.png"
+                src="/logo2.png"
                 alt="img"
                 width={300}
                 height={300}
