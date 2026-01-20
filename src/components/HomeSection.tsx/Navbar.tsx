@@ -90,9 +90,9 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center justify-center">
-            <div className="md:w-48 w-45">
+            <div className="w-30">
               <Image
-                className="w-full md:h-15 h-10"
+                className="w-full"
                 src="/logo2.png"
                 alt="img"
                 width={300}
