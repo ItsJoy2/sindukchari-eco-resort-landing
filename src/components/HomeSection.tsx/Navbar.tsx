@@ -44,7 +44,9 @@ export default function Navbar() {
   return (
     <div
       className={`fixed top-0 left-0 w-full z-30 transition-all duration-300 ${
-        scrolled ? "pt-3 backdrop-blur bg-[#030324] text-white" : "bg-transparent py-5"
+        scrolled
+          ? "pt-3 backdrop-blur bg-[#030324] text-white"
+          : "bg-transparent py-5"
       }`}
     >
       <MainContainer>
@@ -91,13 +93,15 @@ export default function Navbar() {
 
           <div className="flex items-center justify-center">
             <div className="w-30">
-              <Image
-                className="w-full"
-                src="/logo2.png"
-                alt="img"
-                width={300}
-                height={300}
-              />
+              <Link href="/">
+                <Image
+                  className="w-full"
+                  src="/logo2.png"
+                  alt="img"
+                  width={300}
+                  height={300}
+                />
+              </Link>
             </div>
           </div>
 

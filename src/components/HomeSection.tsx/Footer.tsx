@@ -96,7 +96,8 @@ export default function Footer() {
             <h4 className="text-lg font-semibold">Get In Touch</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/sindukchari"
+                target="_blank"
                 className="bg-slate-800 hover:bg-slate-700 rounded-full p-2.5 transition-colors"
               >
                 <Facebook size={20} />
