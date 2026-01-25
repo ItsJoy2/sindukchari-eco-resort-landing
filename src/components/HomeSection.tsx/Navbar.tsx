@@ -8,7 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
-import { IoMdMenu } from "react-icons/io";
+import { IoIosCall, IoMdMenu } from "react-icons/io";
 import MainContainer from "../shared/container/MainContainer";
 
 const menuItems = [
@@ -91,7 +91,7 @@ export default function Navbar() {
             </Sheet>
           </div>
 
-          <div className="flex items-center justify-center">
+          <div className="flex items-center md:justify-center justify-start">
             <div className="w-30">
               <Link href="/">
                 <Image
@@ -108,7 +108,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 sm:gap-3 justify-end">
             <a href="https://wa.me/8801712345678">
               <Button className="bg-[#1DAA61] px-3 sm:px-4 hover:bg-[#127140] cursor-pointer">
-                <FaWhatsapp />
+                <FaWhatsapp className="md:size-auto size-4!" />
                 <span className="hidden sm:inline">Call Now</span>
               </Button>
             </a>
@@ -116,7 +116,8 @@ export default function Navbar() {
             <Link href="/contact">
               <Button className="bg-[#2563EB] hover:bg-[#193e8e] px-3 sm:px-4 cursor-pointer">
                 <span className="hidden sm:inline">Contact Us</span>
-                <GoArrowRight />
+                <GoArrowRight className="md:block hidden" />
+                <IoIosCall className="md:hidden block" />
               </Button>
             </Link>
           </div>

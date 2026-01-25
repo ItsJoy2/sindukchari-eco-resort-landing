@@ -37,8 +37,19 @@ export function HotelRoom() {
   return (
     <div className="w-full py-5 bg-[#F9FBFF]">
       <MainContainer className="overflow-hidden">
-        <HeadingOne className="text-center" text="A Best Place to Enjoy Your" />
-        <HeadingOne className="text-center" text="Life" />
+        <div className="md:hidden block">
+          <HeadingOne
+            className="text-center"
+            text="A Best Place to Enjoy Your Life"
+          />
+        </div>
+        <div className="md:block hidden">
+          <HeadingOne
+            className="text-center"
+            text="A Best Place to Enjoy Your"
+          />
+          <HeadingOne className="text-center" text="Life" />
+        </div>
         <div className="mt-3 relative w-full mx-auto overflow-">
           <div className="w-full mx-auto">
             <Swiper
