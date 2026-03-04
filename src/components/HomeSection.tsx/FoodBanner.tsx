@@ -26,14 +26,11 @@ export default function FoodBanner() {
           <div className="flex-1 space-y-5">
             <HeadingOne
               className="text-center"
-              text="We offer all types of travel service"
+              text=" A Culinary Journey Above the Clouds"
             />
             <Descript
               className="text-[#FFFFFF]"
-              text="With a new concept of space and freedom, we have redefined the idea
-            of luxury, taking it to the highest level, by creating the most
-            stunning luxury resort in Italy. Discover offers crafted to enhance
-            your stay and create unforgettable moments."
+              text={`At the Sindukchari Signature Restaurant, every meal comes with a view. Whether it’s a morning coffee amidst the mist or a traditional "Bamboo Chicken" dinner under the stars, we make every bite a memory.`}
             />
             <button className="flex items-center gap-2">
               Explore Our Restaurant <GoArrowRight />
@@ -41,9 +38,9 @@ export default function FoodBanner() {
           </div>
           <div className="flex-1 flex justify-end w-full">
             <div className="lg:size-130 md:size-80 w-full">
-              <Image
+               <Image
                 className="w-full h-full aspect-square object-cover"
-                src={Images.food1}
+                src="https://i.ytimg.com/vi/etwglj0yarE/maxresdefault.jpg"
                 alt="img"
                 width={500}
                 height={500}

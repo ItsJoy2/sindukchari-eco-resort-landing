@@ -6,8 +6,6 @@ import { useRef, useState } from "react";
 import { FaChevronRight } from "react-icons/fa6";
 import { GoArrowRight } from "react-icons/go";
 import { IoPeopleOutline } from "react-icons/io5";
-import { LuUtensilsCrossed } from "react-icons/lu";
-import { TbBed } from "react-icons/tb";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -16,6 +14,135 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import MainContainer from "../shared/container/MainContainer";
 import HeadingOne from "../shared/heading/HeadingOne";
 import HeadingTwo from "../shared/heading/HeadingTwo";
+
+const hotelData = [
+  {
+    id: 1,
+    name: "Cloud Crown Suite",
+    tag: "Premium",
+    description:
+      "Our most luxurious offering is situated at the highest point of the resort.",
+    features: [
+      "360-degree Floor-to-Ceiling Glass Walls",
+      "King Size Premium Bed",
+      'Private Infinity Balcony with "Cloud-Touch" Access',
+      "Complimentary Mini-Bar & Buffet Breakfast",
+    ],
+    capacity: {
+      adults: 2,
+      children: 1,
+    },
+    mainPrice: 15000,
+    discountPrice: 12500,
+    currency: "BDT",
+    priceUnit: "per_night",
+  },
+  {
+    id: 2,
+    name: "Misty Valley Deluxe",
+    tag: "Couple’s Choice",
+    description:
+      "Secluded and romantic, designed specifically for honeymooners or couples.",
+    features: [
+      "East-Facing Balcony for Sunrise Views",
+      "Open-concept Sky Shower",
+      "Luxury Teakwood Interior",
+      "In-room Candlelight Dinner Setup (On Request)",
+    ],
+    capacity: {
+      adults: 2,
+      children: 0,
+    },
+    mainPrice: 11500,
+    discountPrice: 9500,
+    currency: "BDT",
+    priceUnit: "per_night",
+  },
+  {
+    id: 3,
+    name: "Heritage Family Villa",
+    tag: "Spacious",
+    description:
+      "A large, two-bedroom cottage designed with traditional Khagrachari tribal aesthetics.",
+    features: [
+      "Two Interconnected Bedrooms",
+      "Large Private Veranda with Hammocks",
+      "Mini Library & Board Games Corner",
+      "Kid-friendly Amenities",
+    ],
+    capacity: {
+      adults: 4,
+      children: 2,
+    },
+    mainPrice: 18500,
+    discountPrice: 16000,
+    currency: "BDT",
+    priceUnit: "per_night",
+  },
+  {
+    id: 4,
+    name: "Forest Whisper Cottage",
+    tag: "Eco-Authentic",
+    description:
+      "Built entirely from treated bamboo and local stones to keep you close to nature.",
+    features: [
+      "Natural Cross-Ventilation Design",
+      "Queen Size Orthopedic Mattress",
+      "Direct Access to the Resort’s Private Trekking Trail",
+      "Hand-crafted Hillside Decor",
+    ],
+    capacity: {
+      adults: 2,
+      children: 0,
+    },
+    mainPrice: 9000,
+    discountPrice: 7500,
+    currency: "BDT",
+    priceUnit: "per_night",
+  },
+  {
+    id: 5,
+    name: "The Peak Panorama Studio",
+    tag: "Modern & Sleek",
+    description:
+      "A minimalist, modern studio for those who want comfort without the fuss of a large villa.",
+    features: [
+      "Work-from-Mountain Setup (High-speed Wi-Fi)",
+      "Large Picture Window facing the Sindukchari Valley",
+      "Smart Climate Control",
+      "Rainforest Showerhead",
+    ],
+    capacity: {
+      adults: 2,
+      children: 0,
+    },
+    mainPrice: 10500,
+    discountPrice: 8500,
+    currency: "BDT",
+    priceUnit: "per_night",
+  },
+  {
+    id: 6,
+    name: "Solo Explorer’s Nest",
+    tag: "Adventure",
+    description:
+      "A cozy, budget-friendly pod for the solo traveler or photographer.",
+    features: [
+      "Single Comfortable Bed",
+      "Dedicated Camera/Gear Charging Station",
+      "Compact Balcony with Binocular Access",
+      "Shared Access to the Stargazing Deck",
+    ],
+    capacity: {
+      adults: 1,
+      children: 0,
+    },
+    mainPrice: 5500,
+    discountPrice: 4500,
+    currency: "BDT",
+    priceUnit: "per_night",
+  },
+];
 
 export function HotelRoom() {
   const products = Array.from({ length: 6 });
@@ -82,45 +209,54 @@ export function HotelRoom() {
                 },
               }}
               modules={[Navigation]}
-              className=""
+              className="package-swiper"
             >
-              {products.map((_, index) => (
-                <SwiperSlide key={index} className="bg-white rounded-b-md">
+              {hotelData.map((item, index) => (
+                <SwiperSlide key={index} className="group">
                   <Link href="/resort/123">
-                    <div className="rounded-md">
-                      <Image
-                        src="https://images.pexels.com/photos/30835932/pexels-photo-30835932/free-photo-of-serene-hotel-room-with-mountain-view.jpeg"
-                        alt="img"
-                        width={500}
-                        height={500}
-                        className="rounded-t-md"
-                      />
-                      <div className="p-3">
-                        <HeadingTwo
-                          text="Single Room"
-                          className="mt-2 font-medium"
+                    <div className="bg-white rounded-md overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100">
+                      {/* Image Wrapper */}
+                      <div className="overflow-hidden">
+                        <Image
+                          src="https://images.pexels.com/photos/30835932/pexels-photo-30835932/free-photo-of-serene-hotel-room-with-mountain-view.jpeg"
+                          alt="img"
+                          width={500}
+                          height={500}
+                          className="rounded-t-md transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="text-gray-500">
+                      </div>
+
+                      <div className="p-4">
+                        <HeadingTwo
+                          text={`${item.name} (${item.tag})`}
+                          className="mt-2 font-semibold md:text-[18px] truncate group-hover:text-[#D85707] transition-colors duration-300"
+                        />
+
+                        <div className="text-gray-500 mt-2 space-y-2">
                           <p className="flex items-center gap-1">
-                            <IoPeopleOutline /> 2 Adult 1 Child
+                            <IoPeopleOutline />
+                            {item.capacity.adults > 0 && (
+                              <span>{item.capacity.adults} Adult</span>
+                            )}
+                            {item.capacity.children > 0 && (
+                              <span>{item.capacity.children} Child</span>
+                            )}
                           </p>
-                          <p className="flex items-center gap-1">
-                            <LuUtensilsCrossed /> Buffet Breakfast
-                          </p>
-                          <p className="flex items-center gap-1">
-                            <TbBed /> Twin Bed
-                          </p>
+
                           <p className="space-x-2">
-                            <span>2 Night</span>{" "}
+                            <span>1 Night</span>
                             <span className="text-[#D85707] line-through">
-                              BDT {Number(10500).toLocaleString()}
+                              BDT {Number(item.mainPrice).toLocaleString()}
                             </span>
-                            <span className="text-black">
-                              BDT {Number(8000).toLocaleString()}
+                            <span className="text-black font-semibold">
+                              BDT {Number(item.discountPrice).toLocaleString()}
                             </span>
                           </p>
-                          <button className="text-blue-500 bg-white hover:bg-transparent flex items-center gap-3">
-                            <span>Booking Now</span> <GoArrowRight />
+
+                          {/* Booking Button */}
+                          <button className="text-blue-600 flex items-center gap-2 transition-all duration-300 group-hover:gap-4 group-hover:text-[#D85707]">
+                            <span>Booking Now</span>
+                            <GoArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
                           </button>
                         </div>
                       </div>

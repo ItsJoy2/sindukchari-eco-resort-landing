@@ -10,9 +10,9 @@ export default function HotelDescription() {
     <section className="md:py-12 py-6">
       <MainContainer>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-6 items-center ">
-          <div className="w-full">
+          <div className="w-full h-auto aspect-square overflow-hidden rounded-lg">
             <Image
-              className="w-full"
+              className="w-full rounded-lg"
               src={Images.description}
               alt="img"
               width={500}
@@ -21,23 +21,25 @@ export default function HotelDescription() {
           </div>
           <div className="w-full space-y-6">
             <HeadingOne
-              text="Luxury and Nature in Harmony"
+              text=" Luxury and Nature in Perfect Harmony"
               className="text-[#0C0C0D]"
             />
             <p className="text-[]">
-              With a new concept of space and freedom, we have redefined the
-              idea of luxury, taking it to the highest level, by creating the
-              most stunning luxury resort in Italy. Discover offers crafted to
-              enhance your stay and create unforgettable moments.
+              Sindukchari is the hidden gem of Guimara. Our project is designed
+              to give you a front-row seat to the most beautiful sunrises and
+              misty mornings in Bangladesh.
             </p>
             <ul className="space-y-3">
-              {Array.from({ length: 10 }).map((_, idx) => (
+              {[
+                "Breathtaking 3,000ft+ altitude viewpoints.",
+                "Guided trekking trails through the Sindukchari hills.",
+                "Secure, family-friendly environment with 24/7 surveillance.",
+                "Dedicated campfire and BBQ zones for evening gatherings.",
+                `Authentic "Pahari" hospitality that makes you feel at home.`,
+                "Eco-friendly waste management to preserve the Khagrachari ecosystem.",
+              ].map((item, idx) => (
                 <li key={idx} className="flex items-center gap-2">
-                  <IoCheckmarkDoneOutline />{" "}
-                  <span>
-                    Sindukchari is an emerging tourist attraction in
-                    Khagrachari.
-                  </span>
+                  <IoCheckmarkDoneOutline /> <span>{item}</span>
                 </li>
               ))}
             </ul>

@@ -17,23 +17,23 @@ const cardData = [
   {
     id: 1,
     icon: Images.hotelCard2,
-    title: "Cetaring And Dining",
+    title: "Panoramic Hill Views",
     descirption:
-      "Consectetur adipiscing elit, sed do eiusm od tempor incidunt ut labore.",
+      "Wake up to an endless sea of clouds right outside your window. Our resort is positioned at the perfect altitude to offer the most stunning 360-degree views of the Shindukchari hills.",
   },
   {
     id: 2,
     icon: Images.hotelCard3,
-    title: "Cetaring Rooms",
+    title: "Authentic Hillside Dining",
     descirption:
-      "Consectetur adipiscing elit, sed do eiusm od tempor incidunt ut labore.",
+      "Savour the flavors of the mountains. Our kitchen serves a blend of traditional tribal delicacies and international cuisines, all prepared with fresh, locally sourced organic ingredients.",
   },
   {
     id: 3,
     icon: Images.hotelCard1,
-    title: "Private Resorts",
+    title: "Eco-Luxury Living",
     descirption:
-      "Consectetur adipiscing elit, sed do eiusm od tempor incidunt ut labore.",
+      " Stay in cottages designed to respect the environment without compromising on luxury. Experience a unique blend of bamboo-crafted aesthetics and premium amenities.",
   },
 ];
 
